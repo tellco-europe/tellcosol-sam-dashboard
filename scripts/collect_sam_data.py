@@ -49,7 +49,7 @@ DEFAULT_KEYWORDS = (
     "clinic electrification",
     "mini-grid",
     "diesel generator",
-    "disaster recovery",
+    "disaster recovery"
 )
 
 NOTICE_TYPE_MAP = {
@@ -234,7 +234,7 @@ def first_text(*values: Any) -> str | None:
 
 def nested_dict(record: dict[str, Any], key: str) -> dict[str, Any]:
     value = record.get(key)
-    if isinstance(value, dict):
+    if isinstance(value, dict): 
         return value
     data = record.get("data")
     if isinstance(data, dict) and isinstance(data.get(key), dict):
@@ -1038,10 +1038,10 @@ def parse_args() -> argparse.Namespace:
         description="Collect active SAM.gov opportunities for TellCoSOL."
     )
     parser.add_argument(
-        "--days",
+        "--days", 
         type=int,
-        default=90,
-        help="Posting-date lookback window (default: 90 days).",
+        default=30,
+        help="Posting-date lookback window (default: 30 days).",
     )
     parser.add_argument("--keywords", nargs="+", default=list(DEFAULT_KEYWORDS))
     parser.add_argument(
